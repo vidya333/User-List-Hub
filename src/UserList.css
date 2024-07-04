@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    font-family: "Poppins", sans-serif;
+}
+.card-text{
+    line-height: normal;
+    padding-bottom: 0px;
+    margin: 3px !important;
+    color: #fff;
+    font-weight: normal;
+}
+.card-title{
+    border-radius: 19px 19px 0px 0px;
+    line-height: 21px;
+    font-size: 18px;
+}
+.card{
+    border-radius: 19px ;
+    background: linear-gradient(rgb(255,255,255,0),rgb(255,255,255,0.2));
+}
+.userPic{
+    transition: all 0.6s ease;
+}
+.userPic:hover{
+    transform: scale(1.5);
+    border-radius: 3% !important;
+}
+.user-image{
+    width: 150px;
+    height: 150px;
+    border-radius: 3%;
+}
+.bg-dark{
+    background-color: black;
+}
+.errMsg{
+    font-family: "Indie Flower", cursive;
+}
+.list-group{
+    height: 399px;
+    overflow-y: scroll;
+}
+.list-items{
+    background-color: transparent;
+    color: #ffff !important;
+}
+.list-items:hover{
+    background-color: rgba(182, 182, 179, 0.3);
+    color: #f0ebeb;
+    cursor: pointer;
+}
+.list-group-item-action:focus, .list-group-item-action:hover {
+    background-color: rgba(182, 182, 179, 0.3);
+    color: #f0ebeb;
+}
+.user-list ::-webkit-scrollbar {
+    width: 6px;
+  }
+.user-list ::-webkit-scrollbar-track {
+    background: transparent; 
+    border-radius: 3px;
+}
+.user-list ::-webkit-scrollbar-thumb {
+    background: #d1d0d0; 
+    border-radius: 3px;
+}
+.user-list ::-webkit-scrollbar-thumb:hover{
+    background: #a8a7a7;
+}
+@media screen and (max-width:576px){
+    .list-group{
+        height: 175px;
+        overflow-y: scroll;
+    }
+}
+
