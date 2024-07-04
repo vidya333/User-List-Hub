@@ -10,35 +10,30 @@ const UserList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const startIndex = 9;
-  const delay = 1500;
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      axios
-        .get("https://602e7c2c4410730017c50b9d.mockapi.io/users")
-        .then((response) => {
-          setUsers(response.data);
-          setLoading(false);
+    axios.get('https://602e7c2c4410730017c50b9d.mockapi.io/users')
+        .then(response => {
+            setUsers(response.data);
+            setLoading(false);
         })
-        .catch((error) => {
-          setError(<ErrorPage />);
-          setLoading(false);
+        .catch(error => {
+            setError(<ErrorPage/>);
+            setLoading(false);
         });
-    }, delay);
-    return () => clearTimeout(timer);
-  }, [delay]);
+  }, []);
 
-  const handleUserClick = (user) => {
+const handleUserClick = (user) => {
     setSelectedUser(user);
-  };
+};
 
   if (loading) {
     return (
       <Spinner
         animation="border"
         role="status"
-        className="position-absolute top-50 start-50 text-white"
-        style={{ marginTop: "-30px", marginLeft: "-50px" }}
+        className=" text-white d-block mx-auto"
+        style={{ marginTop: "250px" }}
       >
         <span className="visually-hidden">Loading...</span>
       </Spinner>
@@ -58,7 +53,7 @@ const UserList = () => {
             <i className="fa-solid fa-chevron-right fs-6"></i>
             <i className="fa-solid fa-chevron-right fs-6"></i>
         </p> 
-        <Col lg={3}>
+        <Col xl={3} md={5}>
           <Card className=" border-0 mb-3" >
             <Card.Body className="shadow p-0">
               <Card.Title className="bg-dark text-light border-0 p-3 d-flex justify-content-start">
@@ -91,7 +86,7 @@ const UserList = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col lg={9}>
+        <Col xl={9} md={7}>
           {selectedUser ? (
             <>
               <Card className="shadow border-0">
@@ -102,14 +97,14 @@ const UserList = () => {
                         @{selectedUser.profile.username}
                       </Card.Title>
                     </div>
-                    <div className="d-sm-flex justify-content-start d-wrap p-3 ">
+                    <div className="d-sm-flex justify-content-start d-wrap p-lx-3 p-lg-2 p-1">
                       <div className="px-2">
                         <Image
                           src={selectedUser.avatar}
                           className="mb-3 shadow user-image"
                         />
                       </div>
-                      <div className="px-lg-4 px-md-3 px-2">
+                      <div className="px-lg-4 px-2">
                         <Card.Text>
                           <strong className="text-dark">
                             {selectedUser.profile.firstName}&nbsp;
@@ -141,14 +136,14 @@ const UserList = () => {
                        @username
                       </Card.Title>
                     </div>
-                    <div className="d-sm-flex justify-content-start d-wrap p-3">
+                    <div className="d-sm-flex justify-content-start d-wrap p-lx-3 p-lg-2 p-1">
                       <div className="px-2">
                       <Image
                           src="/user-logo.jpg"
                           className="mb-3 shadow user-image"
                         />
                       </div>
-                      <div className="px-lg-4 px-md-3 px-2">
+                      <div className="px-lg-4 px-2">
                         <Card.Text>
                           <strong className="text-dark">Full Name</strong>
                         </Card.Text>

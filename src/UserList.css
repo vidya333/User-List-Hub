@@ -68,6 +68,11 @@ body{
 .user-list ::-webkit-scrollbar-thumb:hover{
     background: #a8a7a7;
 }
+@media screen and (max-width:900px){
+    .card-text{
+        font-size: 14px;
+    }
+}
 @media screen and (max-width:576px){
     .list-group{
         height: 175px;
